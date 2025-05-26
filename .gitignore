@@ -1,0 +1,26 @@
+## === Visual Studio & .NET Framework  ===
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# VS папка настроек
+.vs/
+
+# Конфигурация пользователя
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet пакеты (если в решении пакеты в packages/)
+packages/
+
+# Отладочная информация и кэш
+*.pdb
+*.cache
+*.log
+*.tlog
+
+# Резервные файлы
+*.bak
+*~    
