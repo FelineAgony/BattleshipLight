@@ -1,0 +1,9 @@
+C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\bin\Debug\BattleShip.exe.config
+C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\bin\Debug\BattleShip.exe
+C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\bin\Debug\BattleShip.pdb
+C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.csproj.AssemblyReference.cache
+C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.Properties.Resources.resources
+C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.csproj.GenerateResource.cache
+C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.csproj.CoreCompileInputs.cache
+C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.exe
+C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.pdb
