@@ -13,6 +13,7 @@ namespace BattleShip
     public partial class Form1 : Form
     {
         private const int GridSize = 5;
+        private const int CellSize = 60;                 
 
         private readonly Button[,] _cells = new Button[GridSize, GridSize];
         private readonly bool[,] _ships = new bool[GridSize, GridSize];
@@ -24,7 +25,7 @@ namespace BattleShip
         public Form1()
         {
             Text = "Battleship Light";
-            ClientSize = new Size(300, 320);
+            ClientSize = new Size(CellSize * GridSize, CellSize * GridSize + 60);
             StartPosition = FormStartPosition.CenterScreen;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -37,8 +38,6 @@ namespace BattleShip
 
         private void CreateGrid()
         {
-            int cell = ClientSize.Width / GridSize;
-
             for (int r = 0; r < GridSize; r++)
             {
                 for (int c = 0; c < GridSize; c++)
@@ -46,10 +45,9 @@ namespace BattleShip
                     var btn = new Button
                     {
                         Name = $"btn_{r}_{c}",
-                        Size = new Size(cell - 2, cell - 2),
-                        Location = new Point(c * cell, r * cell),
-                        BackColor = Color.LightBlue,
-                        Font = new Font(FontFamily.GenericSansSerif, 10, FontStyle.Bold)
+                        Size = new Size(CellSize - 2, CellSize - 2),
+                        Location = new Point(c * CellSize, r * CellSize),
+                        BackColor = Color.LightBlue
                     };
                     btn.Click += Cell_Click;
                     Controls.Add(btn);
@@ -64,9 +62,10 @@ namespace BattleShip
             {
                 Text = "Shots: 0",
                 AutoSize = true,
-                Location = new Point(10, ClientSize.Height - 40)
+                Location = new Point(10, GridSize * CellSize + 15)
             };
             Controls.Add(lblShots);
+            lblShots.BringToFront();    
         }
 
 
@@ -91,13 +90,12 @@ namespace BattleShip
         private void Cell_Click(object sender, EventArgs e)
         {
             var btn = sender as Button;
-            if (btn == null) return;
+            if (btn == null || !btn.Enabled) return;
+
+            btn.Enabled = false;
 
             int[] pos = btn.Name.Split('_').Skip(1).Select(int.Parse).ToArray();
             int r = pos[0], c = pos[1];
-
-            if (!btn.Enabled) return;
-            btn.Enabled = false;
 
             _shots++;
             lblShots.Text = $"Shots: {_shots}";
@@ -105,20 +103,16 @@ namespace BattleShip
             if (_ships[r, c])
             {
                 btn.BackColor = Color.Red;
-                btn.Text = "X";
                 _shipsLeft--;
-
                 if (_shipsLeft == 0)
                 {
-                    MessageBox.Show("WIN",
-                                    "Battleship Light");
+                    MessageBox.Show($"Перемога!\nПострілів: {_shots}", "Battleship Light");
                     ResetGame();
                 }
             }
             else
             {
                 btn.BackColor = Color.Gray;
-                btn.Text = "•";
             }
         }
 
@@ -130,12 +124,9 @@ namespace BattleShip
             {
                 b.Enabled = true;
                 b.BackColor = Color.LightBlue;
-                b.Text = string.Empty;
             }
-
             PlaceShips(2);
-
-            _shots = 0;                 
+            _shots = 0;
             lblShots.Text = "Shots: 0";
         }
     }
