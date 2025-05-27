@@ -20,11 +20,13 @@ namespace BattleShip
         private int _shipsLeft;
 
         private int _shots;
-        private Label lblShots;
-
         private int _seconds;
+
+        private Label lblShots;
         private Label lblTime;
-        private readonly Timer _timer = new Timer { Interval = 1000 }; // 1 с
+        private Label lblShipsLeft;          
+
+        private readonly Timer _timer = new Timer { Interval = 1000 };
 
         public Form1()
         {
@@ -35,8 +37,8 @@ namespace BattleShip
             MaximizeBox = false;
 
             CreateGrid();
-            InitializeHud();
             PlaceShips(2);
+            InitializeHud();
             StartRound();
         }
 
@@ -65,21 +67,22 @@ namespace BattleShip
         {
             lblShots = new Label
             {
-                Text = "Shots: 0",
                 AutoSize = true,
                 Location = new Point(10, GridSize * CellSize + 15)
             };
             lblTime = new Label
             {
-                Text = "Time: 0 s",
                 AutoSize = true,
                 Location = new Point(120, GridSize * CellSize + 15)
             };
+            lblShipsLeft = new Label                    
+            {
+                AutoSize = true,
+                Location = new Point(220, GridSize * CellSize + 15),
+                Text = $"Ships left: {_shipsLeft}"
+            };
 
-            Controls.Add(lblShots);
-            Controls.Add(lblTime);
-            lblShots.BringToFront();
-            lblTime.BringToFront();
+            Controls.AddRange(new Control[] { lblShots, lblTime, lblShipsLeft });
 
             _timer.Tick += (s, e) =>
             {
@@ -123,9 +126,14 @@ namespace BattleShip
             {
                 btn.BackColor = Color.Red;
                 _shipsLeft--;
+                lblShipsLeft.Text = $"Ships left: {_shipsLeft}";   // обновляем
+
                 if (_shipsLeft == 0)
                 {
-                    MessageBox.Show($"Перемога!\nПострілів: {_shots}", "Battleship Light");
+                    _timer.Stop();
+                    MessageBox.Show(
+                        $"Победа!\nПострілів: {_shots}\nЧас: {_seconds} c",
+                        "Battleship Light");
                     ResetGame();
                 }
             }
@@ -135,25 +143,25 @@ namespace BattleShip
             }
         }
 
-        private void ResetGame()
-        {
-            Array.Clear(_ships, 0, _ships.Length);
-            foreach (var b in _cells)
-            {
-                b.Enabled = true;
-                b.BackColor = Color.LightBlue;
-            }
-            PlaceShips(2);
-            StartRound();                
-        }
-
         private void StartRound()
         {
             _shots = 0;
             _seconds = 0;
             lblShots.Text = "Shots: 0";
             lblTime.Text = "Time: 0 s";
+            lblShipsLeft.Text = $"Ships left: {_shipsLeft}";
             _timer.Start();
+        }
+
+        private void ResetGame()
+        {
+            foreach (var b in _cells)
+            {
+                b.Enabled = true;
+                b.BackColor = Color.LightBlue;
+            }
+            PlaceShips(2);
+            StartRound();
         }
     }
 }
