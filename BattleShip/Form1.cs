@@ -22,6 +22,10 @@ namespace BattleShip
         private int _shots;
         private Label lblShots;
 
+        private int _seconds;
+        private Label lblTime;
+        private readonly Timer _timer = new Timer { Interval = 1000 }; // 1 с
+
         public Form1()
         {
             Text = "Battleship Light";
@@ -31,8 +35,9 @@ namespace BattleShip
             MaximizeBox = false;
 
             CreateGrid();
+            InitializeHud();
             PlaceShips(2);
-            InitializeShotCounter();
+            StartRound();
         }
 
 
@@ -56,7 +61,7 @@ namespace BattleShip
             }
         }
 
-        private void InitializeShotCounter()
+        private void InitializeHud()
         {
             lblShots = new Label
             {
@@ -64,10 +69,24 @@ namespace BattleShip
                 AutoSize = true,
                 Location = new Point(10, GridSize * CellSize + 15)
             };
-            Controls.Add(lblShots);
-            lblShots.BringToFront();    
-        }
+            lblTime = new Label
+            {
+                Text = "Time: 0 s",
+                AutoSize = true,
+                Location = new Point(120, GridSize * CellSize + 15)
+            };
 
+            Controls.Add(lblShots);
+            Controls.Add(lblTime);
+            lblShots.BringToFront();
+            lblTime.BringToFront();
+
+            _timer.Tick += (s, e) =>
+            {
+                _seconds++;
+                lblTime.Text = $"Time: {_seconds} s";
+            };
+        }
 
         private void PlaceShips(int count)
         {
@@ -116,7 +135,6 @@ namespace BattleShip
             }
         }
 
-
         private void ResetGame()
         {
             Array.Clear(_ships, 0, _ships.Length);
@@ -126,8 +144,16 @@ namespace BattleShip
                 b.BackColor = Color.LightBlue;
             }
             PlaceShips(2);
+            StartRound();                
+        }
+
+        private void StartRound()
+        {
             _shots = 0;
+            _seconds = 0;
             lblShots.Text = "Shots: 0";
+            lblTime.Text = "Time: 0 s";
+            _timer.Start();
         }
     }
 }
