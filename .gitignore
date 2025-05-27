@@ -24,3 +24,10 @@ packages/
 # Резервные файлы
 *.bak
 *~    
+BattleShip/.vs/BattleShip/v17/.suo
+BattleShip/.vs/BattleShip/v17/DocumentLayout.backup.json
+BattleShip/.vs/BattleShip/v17/DocumentLayout.json
+BattleShip/bin/Debug/BattleShip.exe
+BattleShip/bin/Debug/BattleShip.pdb
+BattleShip/obj/Debug/BattleShip.exe
+BattleShip/obj/Debug/BattleShip.pdb
