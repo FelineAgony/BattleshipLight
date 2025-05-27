@@ -28,7 +28,7 @@ namespace BattleShip
 
         public Form1()
         {
-            Text = "Battleship Light";
+            Text = "Battleship Light (timer)";
             ClientSize = new Size(CellSize * GridSize, CellSize * GridSize + 60);
             StartPosition = FormStartPosition.CenterScreen;
             FormBorderStyle = FormBorderStyle.FixedSingle;
