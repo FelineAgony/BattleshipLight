@@ -24,10 +24,8 @@ jobs:
       run: msbuild BattleShip/BattleShip.sln /p:Configuration=Release
 
     - name: Run unit tests
-      run: dotnet test BattleShip_Tests/BattleShip_Tests.csproj \
-            --configuration Release \
-            --no-build \
-            --logger "trx" --results-directory ./TestResults
+      run: |
+        dotnet test BattleShip_Tests/BattleShip_Tests.csproj --configuration Release --no-build --logger trx --results-directory ./TestResults
 
     - name: Publish code coverage
       uses: codecov/codecov-action@v3
