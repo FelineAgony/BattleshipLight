@@ -21,8 +21,11 @@ jobs:
 
     - name: Restore dependencies
       working-directory: ./BattleShip
-      run: dotnet restore      
-      
+      run: dotnet restore
+
+    - name: Install Windows Desktop workload
+      run: dotnet workload install microsoft-net-sdk-windowsdesktop
+
     - name: Build solution
       working-directory: ./BattleShip
       run: dotnet build --no-restore --configuration Release
