@@ -26,9 +26,3 @@ jobs:
     - name: Run unit tests
       run: |
         dotnet test BattleShip_Tests/BattleShip_Tests.csproj --configuration Release --no-build --logger trx --results-directory ./TestResults
-        
-    - name: Save coverage report
-      uses: actions/upload-artifact@v3
-      with:
-        name: code-coverage
-        path: ./TestResults
