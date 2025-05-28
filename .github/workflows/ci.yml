@@ -14,25 +14,19 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
 
-    - name: Restore dependencies
-      working-directory: ./BattleShip
-      run: dotnet restore
-
-    - name: Install Windows Desktop workload
-      run: dotnet workload install microsoft-net-sdk-windowsdesktop
+    - name: Restore NuGet packages
+      run: msbuild BattleShip/BattleShip.sln /t:Restore
 
     - name: Build solution
-      working-directory: ./BattleShip
-      run: dotnet build --no-restore --configuration Release
+      run: msbuild BattleShip/BattleShip.sln /p:Configuration=Release
 
     - name: Run unit tests
       run: dotnet test BattleShip_Tests/BattleShip_Tests.csproj \
-            --no-build --configuration Release \
+            --configuration Release \
+            --no-build \
             --logger "trx" --results-directory ./TestResults
 
     - name: Publish code coverage
