@@ -26,9 +26,9 @@ jobs:
     - name: Run unit tests
       run: |
         dotnet test BattleShip_Tests/BattleShip_Tests.csproj --configuration Release --no-build --logger trx --results-directory ./TestResults
-
-    - name: Publish code coverage
-      uses: codecov/codecov-action@v3
+        
+    - name: Save coverage report
+      uses: actions/upload-artifact@v3
       with:
-        files: ./TestResults/**/*.xml
-        fail_ci_if_error: true
+        name: code-coverage
+        path: ./TestResults
