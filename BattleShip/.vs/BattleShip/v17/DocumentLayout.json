@@ -3,12 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0382FB0C-D878-4A76-82AF-9A0020F1C48C}|BattleShip.csproj|c:\\users\\denia\\documents\\github\\battleshiplight\\battleship\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0382FB0C-D878-4A76-82AF-9A0020F1C48C}|BattleShip.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88A745EC-4926-A199-C112-344AD4F10B56}|..\\BattleShip_Tests\\BattleShip_Tests.csproj|c:\\users\\denia\\documents\\github\\battleshiplight\\battleship_tests\\gameenginetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0382FB0C-D878-4A76-82AF-9A0020F1C48C}|BattleShip.csproj|C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0382FB0C-D878-4A76-82AF-9A0020F1C48C}|BattleShip.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0382FB0C-D878-4A76-82AF-9A0020F1C48C}|BattleShip.csproj|c:\\users\\denia\\documents\\github\\battleshiplight\\battleship\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0382FB0C-D878-4A76-82AF-9A0020F1C48C}|BattleShip.csproj|solutionrelative:gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0382FB0C-D878-4A76-82AF-9A0020F1C48C}|BattleShip.csproj|c:\\users\\denia\\documents\\github\\battleshiplight\\battleship\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0382FB0C-D878-4A76-82AF-9A0020F1C48C}|BattleShip.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +26,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAwwKQAAAAJAAAAAAAAAA==",
+              "Title": "GameEngineTests.cs",
+              "DocumentMoniker": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip_Tests\\GameEngineTests.cs",
+              "RelativeDocumentMoniker": "..\\BattleShip_Tests\\GameEngineTests.cs",
+              "ToolTip": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip_Tests\\GameEngineTests.cs",
+              "RelativeToolTip": "..\\BattleShip_Tests\\GameEngineTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T06:55:02.58Z",
+              "WhenOpened": "2025-05-28T10:35:08.963Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Title": "GameEngine.cs",
+              "DocumentMoniker": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip\\GameEngine.cs",
+              "RelativeDocumentMoniker": "GameEngine.cs",
+              "ToolTip": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip\\GameEngine.cs",
+              "RelativeToolTip": "GameEngine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T09:34:53.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "ToolTip": "C:\\Users\\denia\\Documents\\GitHub\\BattleshipLight\\BattleShip\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T06:54:56.088Z"
+              "WhenOpened": "2025-05-26T06:55:02.58Z",
+              "EditorCaption": ""
             }
           ]
         }

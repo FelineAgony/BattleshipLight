@@ -7,4 +7,3 @@ C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.
 C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.csproj.CoreCompileInputs.cache
 C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.exe
 C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.pdb
-C:\Users\denia\Documents\GitHub\BattleshipLight\BattleShip\obj\Debug\BattleShip.exe.config
