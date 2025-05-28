@@ -1,0 +1,45 @@
+name: CD
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    needs: build-and-test   # прив’язка до CI (якщо об’єднати)
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Build Release
+      run: dotnet publish BattleShip/BattleShip.csproj \
+            --configuration Release \
+            --output ./publish
+
+    - name: Package artifacts
+      run: |
+        cd publish
+        zip -r ../BattleshipLight-${{ github.ref_name }}.zip .
+
+    - name: Upload Release Assets
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.ref_name }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload ZIP artifact
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./BattleshipLight-${{ github.ref_name }}.zip
+        asset_name: BattlshipLight-${{ github.ref_name }}.zip
+        asset_content_type: application/zip
